@@ -57,6 +57,7 @@ body {
     height: 100%;
     max-height: fit-content;
     background-color: rgb(255, 255, 255);
+    z-index: -1;
 }
 
 .tool-bar {
@@ -68,6 +69,8 @@ body {
     width: 100%;
     background-color: rgb(255, 255, 255);
     flex: 1 1 0;
+    margin: 0;
+    padding: 0;
 }
 
 .inspector {
