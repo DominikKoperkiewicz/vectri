@@ -1,4 +1,5 @@
 const Application = PIXI.Application;
+const Graphics = PIXI.Graphics;
 
 const app = new Application({
     resizeTo: document.getElementById("viewport"),
@@ -11,6 +12,15 @@ const app = new Application({
 
 document.getElementById("viewport").appendChild(app.view);
 
-let surface = document.getElementById("viewport").children[0];
+let canvas = document.getElementById("viewport").children[0];
 
-surface.style.position = "absolute";
+canvas.style.position = "absolute";
+
+
+const rect = new Graphics();
+rect.beginFill(0xAA33BB)
+.lineStyle(4, 0x000000, 1)
+.drawRect(200, 200, 100, 120)
+.endFill();
+
+app.stage.addChild(rect);
