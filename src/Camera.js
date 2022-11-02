@@ -6,17 +6,29 @@ class Camera {
     static scrollDown = false;
 }
 
+app.stage.position.x = canvas.clientWidth * 0.5;
+app.stage.position.y = canvas.clientHeight * 0.5;
+
 canvas.addEventListener('wheel', (event) => {
     const zoomInSpeed = 1.1;
     const zoomOutSpeed = 1 / zoomInSpeed;
+
+    app.stage.position.x = canvas.clientWidth * 0.5;
+    app.stage.position.y = canvas.clientHeight * 0.5;
+
     if(event.deltaY > 0) {
         Camera.zoom = Math.max(0.125, Camera.zoom * zoomOutSpeed);
+        //app.stage.position.x -= canvas.width * 0.5 * Camera.zoom;
+        //app.stage.position.y -= canvas.height * 0.5 * Camera.zoom;
     }else{
         Camera.zoom = Math.min(4, Camera.zoom * zoomInSpeed);
+        //app.stage.position.x += canvas.width * 0.5 * Camera.zoom * zoomOutSpeed;
+        //app.stage.position.y += canvas.height * 0.5 * Camera.zoom * zoomOutSpeed;
+        //app.stage.position.x += canvas.width * 0.5 / Camera.zoom;
+        //app.stage.position.y += canvas.height * 0.5 / Camera.zoom;
     }
     app.stage.scale.x = Camera.zoom;
     app.stage.scale.y = Camera.zoom;
-    console.log(Camera.zoom);
 });
 
 canvas.addEventListener('mousedown', (event) => {
@@ -29,8 +41,10 @@ canvas.addEventListener('mousedown', (event) => {
 
 document.addEventListener('mousemove', (event) => {
     if(Camera.scrollDown) {
-        app.stage.position.x += event.clientX - Camera.x;
-        app.stage.position.y += event.clientY - Camera.y;
+        app.stage.pivot.x -= (event.clientX - Camera.x) / Camera.zoom;
+        app.stage.pivot.y -= (event.clientY - Camera.y) / Camera.zoom;
+        //app.stage.position.x += event.clientX - Camera.x;
+        //app.stage.position.y += event.clientY - Camera.y;
         Camera.x = event.clientX;
         Camera.y = event.clientY;
     }

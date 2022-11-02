@@ -20,7 +20,13 @@ canvas.style.position = "absolute";
 const rect = new Graphics();
 rect.beginFill(0xAA33BB)
 .lineStyle(4, 0x000000, 1)
-.drawRect(200, 200, 100, 120)
+.drawRect(0, 0, 10, 10)
+.endFill();
+
+const rect2 = new Graphics();
+rect.beginFill(0xAA0022)
+.lineStyle(0.5, 0x000000, 1)
+.drawRect(100, 100, 40, 20)
 .endFill();
 
 app.stage.addChild(rect);
