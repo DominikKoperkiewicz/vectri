@@ -74,6 +74,8 @@ body {
 }
 
 .inspector {
+    display: flex;
+    flex-direction: column;
     width: 500px;
     background-color: #333333;
 }
@@ -110,4 +112,25 @@ button {
 .selected {
     display: block;
     background-color: #252526;
+}
+
+.inspector label{
+    margin: 5px 20px;
+    color: #fff;
+    font-size: 2em;
+}
+
+.color-picker{
+    border: none;
+    background: none;
+    margin: 10px;
+    width: auto;
+    height: 4em;
+    cursor: pointer;
+}
+
+.color-picker::-webkit-color-swatch{
+    border-radius: 15px;
+    border-width: 0.5em;
+    border-color: #111111;
 }

@@ -17,15 +17,9 @@ canvas.addEventListener('wheel', (event) => {
     app.stage.position.y = canvas.clientHeight * 0.5;
 
     if(event.deltaY > 0) {
-        Camera.zoom = Math.max(0.125, Camera.zoom * zoomOutSpeed);
-        //app.stage.position.x -= canvas.width * 0.5 * Camera.zoom;
-        //app.stage.position.y -= canvas.height * 0.5 * Camera.zoom;
+        Camera.zoom = Math.max(0.0009765, Camera.zoom * zoomOutSpeed);
     }else{
-        Camera.zoom = Math.min(4, Camera.zoom * zoomInSpeed);
-        //app.stage.position.x += canvas.width * 0.5 * Camera.zoom * zoomOutSpeed;
-        //app.stage.position.y += canvas.height * 0.5 * Camera.zoom * zoomOutSpeed;
-        //app.stage.position.x += canvas.width * 0.5 / Camera.zoom;
-        //app.stage.position.y += canvas.height * 0.5 / Camera.zoom;
+        Camera.zoom = Math.min(1024, Camera.zoom * zoomInSpeed);
     }
     app.stage.scale.x = Camera.zoom;
     app.stage.scale.y = Camera.zoom;

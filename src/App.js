@@ -16,17 +16,33 @@ let canvas = document.getElementById("viewport").children[0];
 
 canvas.style.position = "absolute";
 
+//let renderer = new PIXI.autoDetectRenderer(500, 500, canvas, null, true);
 
+fillColorPicker = document.getElementById("fill-picker");
+lineColorPicker = document.getElementById("line-picker");
+
+//******************** */
+
+/*
 const rect = new Graphics();
-rect.beginFill(0xAA33BB)
+rect.beginFill(0xffffff)
 .lineStyle(4, 0x000000, 1)
 .drawRect(0, 0, 10, 10)
 .endFill();
 
 const rect2 = new Graphics();
-rect.beginFill(0xAA0022)
+rect2.beginFill(0xAA0022)
 .lineStyle(0.5, 0x000000, 1)
 .drawRect(100, 100, 40, 20)
 .endFill();
 
 app.stage.addChild(rect);
+app.stage.addChild(rect2);
+
+
+rect.interactive = true;
+rect.on('pointerdown', () => {
+    rect.scale.x += 0.1;
+    EventTarget.scale.y += 0.1;
+});
+*/
