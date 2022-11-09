@@ -20,6 +20,11 @@ canvas.style.position = "absolute";
 
 fillColorPicker = document.getElementById("fill-picker");
 lineColorPicker = document.getElementById("line-picker");
+lineWidthPicker = document.getElementById("line-width");
+
+fillColorPicker.value = '#000000';
+lineColorPicker.value = '#000000';
+lineWidthPicker.value = '1';
 
 //******************** */
 

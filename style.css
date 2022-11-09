@@ -134,3 +134,8 @@ button {
     border-width: 0.5em;
     border-color: #111111;
 }
+
+.line-width {
+    width: 4em;
+    margin: 0.5em 1.5em;
+}

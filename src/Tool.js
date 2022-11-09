@@ -4,5 +4,7 @@ class Tool {
         console.log("tool constructor");
     }
 
-    
+    objectPressed(obj) {
+
+    }
 }

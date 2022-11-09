@@ -5,3 +5,5 @@ class Select extends Tool {
         console.log("select constructor");
     }
 }
+
+Program.tool = new Select();
