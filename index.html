@@ -30,9 +30,10 @@
     </header>
     <main id="main-window" class="main-window disable-select">
         <div class="tool-bar">
-            <button>A</button>
-            <button>B</button>
-            <button>C</button>
+            <button id="select-tool" title="Select">A</button>
+            <button id="rectangle-tool" title="Rectangle">B</button>
+            <button id="elipse-tool" title="Elipse">C</button>
+            <button id="rotation-tool" title="Rotation">D</button>
         </div>
         <div id="viewport" class="viewport"></div>
         <div class="inspector">
@@ -53,7 +54,10 @@
     <script src="./src/GraphicObject.js"></script>
     <script src="./src/Factory.js"></script>
     <script src="./src/Tool.js"></script>
-    <script src="./src/Select.js"></script>
+    <script src="./src/SelectTool.js"></script>
+    <script src="./src/RectangleTool.js"></script>
+    <script src="./src/RotationTool.js"></script>
+    <script src="./src/ToolsSetup.js"></script>
 
 </body>
 </html>

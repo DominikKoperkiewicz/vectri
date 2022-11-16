@@ -8,9 +8,9 @@ class GraphicObject {
 
     constructor(shape, parent) {
         this.parent = parent;
-        this.fillColor = fillColorPicker.value;
-        this.lineColor = lineColorPicker.value;
-        this.lineWidth = lineWidthPicker.value;
+        this.fillColor = '0x' + fillColorPicker.value.substr(1); //fillColorPicker.value;
+        this.lineColor = '0x' + lineColorPicker.value.substr(1);  //lineColorPicker.value;
+        this.lineWidth = parseFloat(lineWidthPicker.value);
         this.shape = shape;
         
         app.stage.addChild(this.parent);
