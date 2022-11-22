@@ -1,5 +1,6 @@
 
 class GraphicObject {
+    static id = 0;
     parent;
     fillColor;
     lineColor;
@@ -12,6 +13,8 @@ class GraphicObject {
         this.lineColor = '0x' + lineColorPicker.value.substr(1);  //lineColorPicker.value;
         this.lineWidth = parseFloat(lineWidthPicker.value);
         this.shape = shape;
+        parent.zIndex = GraphicObject.id;
+        GraphicObject.id++;
         
         app.stage.addChild(this.parent);
         this.render();

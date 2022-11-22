@@ -8,8 +8,16 @@ document.getElementById("rectangle-tool").addEventListener('mousedown', () => {
     Program.tool = new RectangleTool();
 });
 
+document.getElementById("ellipse-tool").addEventListener('mousedown', () => {
+    Program.tool = new EllipseTool();
+});
+
 document.getElementById("rotation-tool").addEventListener('mousedown', () => {
     Program.tool = new RotationTool();
+});
+
+document.getElementById("resize-tool").addEventListener('mousedown', () => {
+    Program.tool = new ResizeTool();
 });
 
 canvas.addEventListener('mousedown', (e) => {
@@ -21,7 +29,6 @@ document.addEventListener('mouseup', (e) => {
 
 document.addEventListener('mousemove', (e) => {
     Program.tool.mouseMove(e);
-    console.log(fillColorPicker.value);
 });
 
 document.addEventListener('keydown', (e) => {
@@ -33,6 +40,12 @@ document.addEventListener('keydown', (e) => {
             break;
         case "Control":
             Program.isCtrlPressed = true;
+            break;
+        case "PageUp":
+            Program.selected.zIndex++;
+            break;
+        case "PageDown":
+            Program.selected.zIndex--;
             break;
     }
 

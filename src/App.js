@@ -10,13 +10,13 @@ const app = new Application({
     backgroundColor: 0xffffff
 });
 
+app.stage.sortableChildren = true;
+
 document.getElementById("viewport").appendChild(app.view);
 
 let canvas = document.getElementById("viewport").children[0];
 
 canvas.style.position = "absolute";
-
-//let renderer = new PIXI.autoDetectRenderer(500, 500, canvas, null, true);
 
 fillColorPicker = document.getElementById("fill-picker");
 lineColorPicker = document.getElementById("line-picker");
@@ -26,28 +26,33 @@ fillColorPicker.value = '#000000';
 lineColorPicker.value = '#000000';
 lineWidthPicker.value = '1';
 
-//******************** */
 
-/*
-const rect = new Graphics();
-rect.beginFill(0xffffff)
-.lineStyle(4, 0x000000, 1)
-.drawRect(0, 0, 10, 10)
+/**************/
+
+g = new PIXI.Graphics();
+poly = new PIXI.Polygon(new PIXI.Point(0,0), new PIXI.Point(50,0), new PIXI.Point(100,50)); //0,0,50,0,100,50
+poly.closeStroke = false;
+g.clear();
+g.beginFill(0xAA2222)
+.lineStyle(0.2, 0x000000, 1)
+//.moveTo(-50,0)
+//.bezierCurveTo(0,250,0,-100,200,0)
+//.lineTo(0,-50)
+//.quadraticCurveTo(-50,-50,100,100,200,0)
+//.bezierCurveTo(200,-100,100,-200,50,-100)
+.moveTo(50.04622,157.71248)
+//.bezierCurveTo(33.67596,-12.2543,0,0, 5.799749,-24.60216)
+// .bezierCurveTo(0,0, 33.67596,-12.2543, 5.799749,-24.60216)
+//.quadraticCurveTo(0,0, 33.67596,-12.2543, 5.799749,-24.60216)
+
+//.quadraticCurveTo(200,-100,100,-200,50,-100)
+//.drawShape(poly)
+//.drawPolygon(poly.points)
 .endFill();
 
-const rect2 = new Graphics();
-rect2.beginFill(0xAA0022)
-.lineStyle(0.5, 0x000000, 1)
-.drawRect(100, 100, 40, 20)
-.endFill();
+app.stage.addChild(g);
 
-app.stage.addChild(rect);
-app.stage.addChild(rect2);
-
-
-rect.interactive = true;
-rect.on('pointerdown', () => {
-    rect.scale.x += 0.1;
-    EventTarget.scale.y += 0.1;
+g.interactive = true;
+g.on('pointerdown', (e) => {
+    console.log("TTT");
 });
-*/

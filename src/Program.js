@@ -8,7 +8,6 @@ class Program {
 
 
 fillColorPicker.addEventListener('change', (e) => {
-    console.log('CHANGE');
     if(Program.selected === null) { return; }
     if(Program.selected === null) { return; }
     Program.selected.obj.fillColor = '0x' + fillColorPicker.value.substr(1);
