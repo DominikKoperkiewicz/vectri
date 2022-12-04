@@ -28,7 +28,7 @@ lineWidthPicker.value = '1';
 
 
 /**************/
-
+/*
 g = new PIXI.Graphics();
 poly = new PIXI.Polygon(new PIXI.Point(0,0), new PIXI.Point(50,0), new PIXI.Point(100,50)); //0,0,50,0,100,50
 poly.closeStroke = false;
@@ -50,9 +50,10 @@ g.beginFill(0xAA2222)
 //.drawPolygon(poly.points)
 .endFill();
 
-app.stage.addChild(g);
+//app.stage.addChild(g);
 
 g.interactive = true;
 g.on('pointerdown', (e) => {
     console.log("TTT");
 });
+*/

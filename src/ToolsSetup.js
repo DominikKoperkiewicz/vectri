@@ -1,23 +1,45 @@
 Program.tool = new SelectTool();
 
-document.getElementById("select-tool").addEventListener('mousedown', () => {
+document.getElementById("select-tool").addEventListener('mousedown', (e) => {
     Program.tool = new SelectTool();
+    let tmp = document.getElementsByClassName("active")[0]
+    if( tmp != undefined) tmp.classList.remove("active");
+    e.target.classList.add("active");
 });
 
-document.getElementById("rectangle-tool").addEventListener('mousedown', () => {
+document.getElementById("rectangle-tool").addEventListener('mousedown', (e) => {
     Program.tool = new RectangleTool();
+    let tmp = document.getElementsByClassName("active")[0]
+    if( tmp != undefined) tmp.classList.remove("active");
+    e.target.classList.add("active");
 });
 
-document.getElementById("ellipse-tool").addEventListener('mousedown', () => {
+document.getElementById("ellipse-tool").addEventListener('mousedown', (e) => {
     Program.tool = new EllipseTool();
+    let tmp = document.getElementsByClassName("active")[0]
+    if( tmp != undefined) tmp.classList.remove("active");
+    e.target.classList.add("active");
 });
 
-document.getElementById("rotation-tool").addEventListener('mousedown', () => {
+document.getElementById("path-tool").addEventListener('mousedown', (e) => {
+    Program.tool = new PathTool();
+    let tmp = document.getElementsByClassName("active")[0]
+    if( tmp != undefined) tmp.classList.remove("active");
+    e.target.classList.add("active");
+});
+
+document.getElementById("rotation-tool").addEventListener('mousedown', (e) => {
     Program.tool = new RotationTool();
+    let tmp = document.getElementsByClassName("active")[0]
+    if( tmp != undefined) tmp.classList.remove("active");
+    e.target.classList.add("active");
 });
 
-document.getElementById("resize-tool").addEventListener('mousedown', () => {
+document.getElementById("resize-tool").addEventListener('mousedown', (e) => {
     Program.tool = new ResizeTool();
+    let tmp = document.getElementsByClassName("active")[0]
+    if( tmp != undefined) tmp.classList.remove("active");
+    e.target.classList.add("active");
 });
 
 canvas.addEventListener('mousedown', (e) => {
@@ -58,4 +80,9 @@ document.addEventListener('keyup', (e) => {
             Program.isCtrlPressed = false;
             break;
     }
+});
+
+
+document.getElementById("save-file").addEventListener('mousedown', () => {
+    SaverSVG.saveFile();
 });

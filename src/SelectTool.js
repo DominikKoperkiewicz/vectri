@@ -5,7 +5,6 @@ class SelectTool extends Tool {
 
     constructor() {
         super();
-        console.log("select constructor");
     }
 
     objectPressed(object, event) {

@@ -23,9 +23,15 @@ class GraphicObject {
     render() {
         this.parent.clear();
         this.parent.beginFill(this.fillColor)
-        .lineStyle(this.lineWidth, this.lineColor, 1)
-        .drawShape(this.shape)
-        .endFill();
+        .lineStyle(this.lineWidth, this.lineColor, 1);
+
+        if(this.shape.isPath === true) {
+            this.shape.drawPath(this.parent);
+        }else{
+            this.parent.drawShape(this.shape);
+        }
+        
+        this.parent.endFill();
     }
 }
 

@@ -1,7 +1,7 @@
 
 class Program {
     static tool = null;
-    static selectionBox = new Graphics();
+    //static selectionBox = new Graphics();
     static selected = null;
     static isCtrlPressed = false;
 }

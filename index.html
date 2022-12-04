@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Vectri</title>
+    <link rel="icon" href="./icon.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -10,10 +11,12 @@
         <ul id="top-bar" class="top-bar">
             <li class="top-button">File
                 <ul class="drop-down">
-                    <li>New File</li>
-                    <li>Open File</li>
+                    <li><div>New File</div></li>
+                    <li id="save-file"><div>Save File</div></li>
+                    <li><label><input type="file" id="file-input" /><div>Open File</div></label></li>
                 </ul>
             </li>
+        <!--
             <li class="top-button">Edit
                 <ul class="drop-down">
                     <li>Undo</li>
@@ -26,13 +29,15 @@
                     <li>About</li>
                 </ul>
             </li>
+        -->
         </ul>
     </header>
     <main id="main-window" class="main-window disable-select">
         <div class="tool-bar">
-            <button id="select-tool" title="Select"><img src="./img/select-icon.svg" class="icon" /></button>
+            <button id="select-tool" title="Select" class="active"><img src="./img/select-icon.svg" class="icon" /></button>
             <button id="rectangle-tool" title="Rectangle"><img src="./img/rectangle-icon.svg" class="icon" /></button>
             <button id="ellipse-tool" title="Ellipse"><img src="./img/ellipse-icon.svg" class="icon" /></button>
+            <button id="path-tool" title="Path"><img src="./img/path-icon.svg" class="icon" /></button>
             <button id="rotation-tool" title="Rotation"><img src="./img/rotation-icon.svg" class="icon" /></button>
             <button id="resize-tool" title="Resize"><img src="./img/resize-icon.svg" class="icon" /></button>
         </div>
@@ -50,14 +55,18 @@
     <script src="./node_modules/pixi.js/dist/browser/pixi.min.js"></script>
     <script src="./src/DropDown.js"></script>
     <script src="./src/App.js"></script>
+    <script src="./src/SaverSVG.js"></script>
+    <script src="./src/LoaderSVG.js"></script>
     <script src="./src/Camera.js"></script>
     <script src="./src/Program.js"></script>
+    <script src="./src/Path.js"></script>
     <script src="./src/GraphicObject.js"></script>
     <script src="./src/Factory.js"></script>
     <script src="./src/Tool.js"></script>
     <script src="./src/SelectTool.js"></script>
     <script src="./src/RectangleTool.js"></script>
     <script src="./src/EllipseTool.js"></script>
+    <script src="./src/PathTool.js"></script>
     <script src="./src/RotationTool.js"></script>
     <script src="./src/ResizeTool.js"></script>
     <script src="./src/ToolsSetup.js"></script>

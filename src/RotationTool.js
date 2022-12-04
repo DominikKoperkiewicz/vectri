@@ -12,8 +12,8 @@ class RotationTool extends Tool {
     objectPressed(object, event) {
         if( event.data.button === 0) {
             this.objectReference = object;
-            this.grabPoint.x = (app.renderer.plugins.interaction.mouse.global.x - app.stage.position.x)/ Camera.zoom + app.stage.pivot.x - object.obj.shape.x;
-            this.grabPoint.y = (app.renderer.plugins.interaction.mouse.global.y - app.stage.position.y)/ Camera.zoom + app.stage.pivot.y - object.obj.shape.y;
+            this.grabPoint.x = (app.renderer.plugins.interaction.mouse.global.x - app.stage.position.x)/ Camera.zoom + app.stage.pivot.x// - object.x;// - object.obj.shape.x;
+            this.grabPoint.y = (app.renderer.plugins.interaction.mouse.global.y - app.stage.position.y)/ Camera.zoom + app.stage.pivot.y// - object.y;// - object.obj.shape.y;
 
             this.angle = object.rotation;
         }

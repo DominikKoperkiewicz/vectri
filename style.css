@@ -99,7 +99,6 @@ button {
 .drop-down li {
     list-style: none;
     width: 200px;
-    padding: 1em;
     color: #ddd;
     background-color: #252526;
 }
@@ -142,4 +141,19 @@ button {
 
 .icon {
     max-width: 60%;
+    pointer-events: none;
+}
+
+.active {
+    background-color:#606060;
+}
+
+.drop-down input {
+    display: none;
+}
+
+.drop-down div {
+    display: block;
+    padding: 1em;
+    cursor: pointer;
 }
